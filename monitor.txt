@@ -1,0 +1,47 @@
+Process Status
+ps
+
+PID: Process ID
+TTY: Terminal type associated with the process
+TIME: Total CPU time used by the process
+CMD: The command that started the process
+
+List Process
+top
+
+PID:
+USER: The user account that owns the process
+PR: Priority of the process
+NI: Nice value, which affects scheduling priority
+VIRT: Virtual memory size used by the process
+RES: Resident memory size, the non-swapped physical memory the process uses
+SHR: Shared memory size
+S: Process status 
+%CPU: CPU usage percentage
+%MEM: Memory usage percentage
+TIME+: Total CPU time the process has used since it started
+COMMAND: The command that started the process
+
+Disk Space
+df
+
+Filesystem: The name of the file system
+1K-blocks: Total size of the file system in 1k blocks
+Used: Amount of space used
+Available: Amount of space available for use
+Use%: Percentage of space used
+Mounted on: Directory where the file system is mounted
+
+Directory Usage 
+du
+
+Size: The amount of disk space used by the file or directory
+Path: The file or directory path
+
+Memory Usage
+Free
+
+Terminate
+kill
+
+System Runtime
