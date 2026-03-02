@@ -1,0 +1,47 @@
+git config --global user.email "seu-email@exemplo.com"
+git config --global user.name "Seu Nome"
+
+git init
+# Adiciona o endereço do servidor GitHub (Troque o link pelo seu)
+git remote add origin https://github.com
+
+git add .               # Prepara todos os arquivos
+git commit -m "mensagem" # Carimba a versão local
+git push origin main    # Dispara para a nuvem
+
+echo "*.swp" >> .gitignore
+echo "mecanumbot" >> .gitignore
+
+git rm --cached *.swp
+git add .
+git commit -m "fix: limpando lixo do vim"
+git push origin main
+
+git remote set-url origin https://github.com ## Corrige erro de permissão ( Mudar para HTTPS )
+
+git status
+git log --oneline
+
+# Inicia o login via navegador ou código de 8 dígitos
+gh auth login
+
+# Se der erro de permissão no push, use este para atualizar os tokens:
+gh auth refresh -s write:public_key
+
+# Cria o repo baseado na sua pasta atual
+gh repo create mecanum-core --public --source=. --remote=origin
+
+# Para ver o status do seu repo no GitHub (quem deu estrela, forks, etc):
+gh repo view
+
+# Adiciona a sua chave pública SSH do Pi 5 direto no seu perfil do GitHub
+gh ssh-key add ~/.ssh/id_ed25519.pub --title "Raspberry Pi 5 Core"
+
+# Lista as chaves que você já tem cadastradas:
+gh ssh-key list
+
+# Para clonar o projeto em uma máquina nova:
+gh repo clone seu-usuario/mecanum-core
+
+# Para ver se o seu commit chegou no site (lista os últimos 5):
+gh run list --limit 5
